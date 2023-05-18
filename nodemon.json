@@ -1,0 +1,10 @@
+
+{
+    "env": {
+        "DB_USER": "mernstack-course",
+        "DB_PASSWORD": "pratik123",
+        "DB_NAME": "mern_udemy",
+        "GOOGLE_API_KEY": "",
+        "JWT_SECRETE_KEY": "supersectrete_dont_share"
+    }
+}
