@@ -9,7 +9,7 @@ const User = require('../models/user');
 let DUMMY_USERS = [
     {
         id:'u1',
-        name:'Max Schwarz',
+        name:'Max Schwartz',
         email: 'test@test.com',
         password: 'testers'
     }
@@ -18,12 +18,12 @@ let DUMMY_USERS = [
 const getUsers = async (req, res, next) => {
     // res.status(200).json(DUMMY_USERS);
 
-    // exclude password in returning dacument
+    // exclude password in returning document
     // const users = User.find({}, '-password');
     
     let users;
     try {
-        // include email, image and name in returning dacument
+        // include email, image and name in returning document
         users = await User.find({}, 'email name image places');
     } catch (err) {
         const error = new HttpError('Fetching users failed, please try again later', 500);
@@ -120,7 +120,7 @@ let existingUser;
     try {
         existingUser = await User.findOne({email: email})
     } catch (err) {
-        const error = new HttpError('Loging in failed, Please try again later.', 500);
+        const error = new HttpError('Logging in failed, Please try again later.', 500);
         return next(error);
     }
 

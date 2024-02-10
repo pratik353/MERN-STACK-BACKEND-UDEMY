@@ -1,6 +1,6 @@
 const express = require('express');
 
-// obejct destructure
+// object destructure
 const { check } = require('express-validator');
 const checkAuth = require('../middleware/check-auth');
 
@@ -94,7 +94,7 @@ router.get('/user/:uid', placesController.getPlacesByUserId);
 router.use(checkAuth);
 
 // POST API router
-// validator middleware for input valus check / validation
+// validator middleware for input values check / validation
 router.post('/', fileUpload.single('image'), [check('title').not().isEmpty(), check('description').isLength({min: 5}), check('address').not().isEmpty()], placesController.createPlace);
 
 // PATCH API route

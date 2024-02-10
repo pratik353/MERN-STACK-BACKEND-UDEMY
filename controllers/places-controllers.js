@@ -170,7 +170,7 @@ const createPlace = async (req, res, next) => {
     }
 
     try {
-        // criating new mongoose session
+        // creating new mongoose session
         const session = await mongoose.startSession();
 
         // starting  transaction();
@@ -192,7 +192,7 @@ const createPlace = async (req, res, next) => {
 
     // } catch (err) {
     //     console.log(err);
-    //     const error = new HttpError('Creating place faild, please try again later', 500)
+    //     const error = new HttpError('Creating place failed, please try again later', 500)
     //     return next(error);
     // }
 
@@ -297,7 +297,7 @@ const deletePlace = async (req, res, next) => {
     
     // try {
     //     // remove() => remove document from the collection -> this method is removed from latest mongoose version
-    //     // instaed you can use deleteOne() method
+    //     // instead you can use deleteOne() method
     //     await place.deleteOne();
     // } catch (err) {
     //     const error = new HttpError('Something went wrong, Could not delete a place', 500);
@@ -307,7 +307,7 @@ const deletePlace = async (req, res, next) => {
     res.status(200).json({message:'Place deleted successfully'})
 };
 
-// export mutiple things
+// export multiple things
 exports.getPlaceById = getPlaceById;
 exports.getPlacesByUserId = getPlacesByUserId;
 exports.createPlace = createPlace;

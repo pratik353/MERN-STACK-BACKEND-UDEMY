@@ -10,7 +10,7 @@ const userSchema = new Schema({
     image: { type: String, required: true},
     //  mongoose.Types.ObjectId => access id mongoose Id
     // ref used to give refernce of collection in which we want to make relation
-    // [] represents places will be multiple values
+    // [] represents places will be multiple values OR ARRAY
     places: [{ type: mongoose.Types.ObjectId, required: true, ref: 'Places'}],
 });
 

@@ -6,14 +6,14 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
-// const DB_URL = 'mongodb+srv://mernstack-course:pratik123@cluster0.5j4t3vg.mongodb.net/mern_udemy?retryWrites=true&w=majority';
-const DB_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.5j4t3vg.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const DB_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.w9itsex.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 const placesRouter = require('./routes/places-route');
 const usersRouter = require('./routes/users-route');
 const HttpError = require('./models/http-error');
 
 const app = express();
+// app.use(logger);
 
 // object to JSON parser middleware
 app.use(bodyParser.json());
@@ -63,7 +63,7 @@ mongoose.connect(DB_URL).then(()=>{
     console.log('Connection established');
     app.listen(process.env.PORT || 5000);
 }).catch((err) => {
-    console.log('Could not connnected to database');
+    console.log('Could not connected to database');
 });
 
 

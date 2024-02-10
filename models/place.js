@@ -12,4 +12,5 @@ const placeSchema = mongoose.Schema({
     creator: { type: mongoose.Types.ObjectId, required: true, ref: 'User'},
 });
 
+// mongoose.model() creates new table in database 
 module.exports = mongoose.model('Places', placeSchema);
